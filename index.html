@@ -187,9 +187,22 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { color: var(--white); text-decoration: none; font-size: 1.5rem; font-weight: 600; }
     .mobile-menu-close {
-      position: absolute; top: 24px; right: 24px; font-size: 1.5rem;
-      cursor: pointer; color: var(--white-60); background: none; border: none; color: var(--white-60);
+      display: none;
     }
+    .mobile-menu-cancel {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 8px; padding: 14px 36px;
+      border-radius: 100px; border: 1.5px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(10px);
+      color: rgba(255,255,255,0.7); font-size: 1rem; font-weight: 600;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+    }
+    .mobile-menu-cancel:hover, .mobile-menu-cancel:active {
+      background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.5);
+      color: #fca5a5; transform: scale(1.04);
+    }
+    .mobile-menu-cancel i { font-size: 1.1rem; }
 
     /* ===================================
        HERO SECTION
@@ -369,11 +382,13 @@
     .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; }
     .portfolio-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--card-border); background: var(--card-bg); transition: var(--transition); cursor: pointer; }
     .portfolio-card:hover { transform: translateY(-6px); border-color: rgba(139,92,246,0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.5); }
-    .portfolio-thumb { width: 100%; height: 200px; position: relative; overflow: hidden; }
-    .portfolio-thumb-inner { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
-    .portfolio-overlay { position: absolute; inset: 0; background: rgba(5,5,8,0.8); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); }
+    .portfolio-thumb { width: 100%; height: 210px; position: relative; overflow: hidden; }
+    .portfolio-thumb-inner { width: 100%; height: 100%; position: relative; }
+    .portfolio-thumb-inner img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .portfolio-card:hover .portfolio-thumb-inner img { transform: scale(1.07); }
+    .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,8,0.85) 0%, rgba(5,5,8,0.3) 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition); }
     .portfolio-card:hover .portfolio-overlay { opacity: 1; }
-    .portfolio-view-btn { background: var(--gradient-primary); color: var(--white); padding: 10px 24px; border-radius: 100px; font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
+    .portfolio-view-btn { background: var(--gradient-primary); color: var(--white); padding: 10px 24px; border-radius: 100px; font-weight: 600; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(139,92,246,0.5); }
     .portfolio-info { padding: 24px; }
     .portfolio-cat { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple-light); margin-bottom: 8px; }
     .portfolio-name { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
@@ -554,6 +569,9 @@
     <a href="#testimonials" class="mobile-link">Reviews</a>
     <a href="#contact" class="mobile-link">Contact</a>
     <a href="https://wa.me/2349017896194" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <button class="mobile-menu-cancel" id="mobileCancelBtn" aria-label="Close menu">
+      <i class="fas fa-times-circle"></i> Close Menu
+    </button>
   </nav>
 
   <!-- ===== NAVIGATION ===== -->
@@ -857,7 +875,10 @@
       <div class="portfolio-grid" id="portfolioGrid">
         <article class="portfolio-card reveal" data-category="landing" style="transition-delay:0s">
           <a href="https://laundry-dream-calc.lovable.app" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
-            <div class="portfolio-thumb"><div class="portfolio-thumb-inner pc-purple">🧺</div><div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div></div>
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner"><img src="images/proj1.jpg" alt="Laundry Dream Calculator web app" loading="lazy" /></div>
+              <div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Live Site</div></div>
+            </div>
           </a>
           <div class="portfolio-info"><div class="portfolio-cat">Web Application</div><h3 class="portfolio-name">Laundry Dream Calculator</h3><p class="portfolio-desc">A smart laundry pricing calculator web app with a clean, modern UI — helping laundry businesses quickly generate accurate quotes for customers.</p><div class="portfolio-tags"><span class="portfolio-tag">Web App</span><span class="portfolio-tag">Calculator</span><span class="portfolio-tag">Lovable</span></div>
             <a href="https://laundry-dream-calc.lovable.app" target="_blank" rel="noopener" class="portfolio-view-btn" style="display:inline-flex;margin-top:12px;padding:8px 16px;border-radius:100px;font-size:0.8rem;"><i class="fas fa-external-link-alt"></i> Live Preview</a>
@@ -865,7 +886,10 @@
         </article>
         <article class="portfolio-card reveal" data-category="portfolio" style="transition-delay:0.08s">
           <a href="https://ahmad-resturant-portfolio.lovable.app" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
-            <div class="portfolio-thumb"><div class="portfolio-thumb-inner pc-blue">🍽️</div><div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div></div>
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner"><img src="images/proj2.jpg" alt="Ahmad Restaurant Portfolio website" loading="lazy" /></div>
+              <div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Live Site</div></div>
+            </div>
           </a>
           <div class="portfolio-info"><div class="portfolio-cat">Restaurant Portfolio</div><h3 class="portfolio-name">Ahmad Restaurant Portfolio</h3><p class="portfolio-desc">Elegant restaurant showcase website with a rich menu display, stunning food imagery layout, and a compelling brand identity that drives table reservations.</p><div class="portfolio-tags"><span class="portfolio-tag">Restaurant</span><span class="portfolio-tag">Portfolio</span><span class="portfolio-tag">Lovable</span></div>
             <a href="https://ahmad-resturant-portfolio.lovable.app" target="_blank" rel="noopener" class="portfolio-view-btn" style="display:inline-flex;margin-top:12px;padding:8px 16px;border-radius:100px;font-size:0.8rem;"><i class="fas fa-external-link-alt"></i> Live Preview</a>
@@ -873,22 +897,34 @@
         </article>
         <article class="portfolio-card reveal" data-category="landing" style="transition-delay:0.16s">
           <a href="https://taskflow-todo-taupe.vercel.app" target="_blank" rel="noopener" style="text-decoration:none;display:block;">
-            <div class="portfolio-thumb"><div class="portfolio-thumb-inner pc-teal">✅</div><div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div></div>
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner"><img src="images/proj3.jpg" alt="TaskFlow Todo productivity app" loading="lazy" /></div>
+              <div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Live Site</div></div>
+            </div>
           </a>
           <div class="portfolio-info"><div class="portfolio-cat">Productivity App</div><h3 class="portfolio-name">TaskFlow Todo App</h3><p class="portfolio-desc">A sleek, responsive task management application with smooth animations, priority tagging, and an intuitive UI built for maximum personal productivity.</p><div class="portfolio-tags"><span class="portfolio-tag">Todo App</span><span class="portfolio-tag">React</span><span class="portfolio-tag">Vercel</span></div>
             <a href="https://taskflow-todo-taupe.vercel.app" target="_blank" rel="noopener" class="portfolio-view-btn" style="display:inline-flex;margin-top:12px;padding:8px 16px;border-radius:100px;font-size:0.8rem;"><i class="fas fa-external-link-alt"></i> Live Preview</a>
           </div>
         </article>
         <article class="portfolio-card reveal" data-category="business" style="transition-delay:0.24s">
-          <div class="portfolio-thumb"><div class="portfolio-thumb-inner pc-dark">🏢</div><div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div></div>
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-inner"><img src="images/proj4.jpg" alt="Nexus Construction Group corporate website" loading="lazy" /></div>
+            <div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div>
+          </div>
           <div class="portfolio-info"><div class="portfolio-cat">Corporate Website</div><h3 class="portfolio-name">Nexus Construction Group</h3><p class="portfolio-desc">Premium corporate website for a construction firm with project gallery, team showcase, and enquiry system.</p><div class="portfolio-tags"><span class="portfolio-tag">Corporate</span><span class="portfolio-tag">WordPress</span><span class="portfolio-tag">SEO</span></div></div>
         </article>
         <article class="portfolio-card reveal" data-category="portfolio" style="transition-delay:0.32s">
-          <div class="portfolio-thumb"><div class="portfolio-thumb-inner pc-orange">🎨</div><div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div></div>
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-inner"><img src="images/proj5.jpg" alt="Adeola Creative Studio portfolio website" loading="lazy" /></div>
+            <div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div>
+          </div>
           <div class="portfolio-info"><div class="portfolio-cat">Portfolio Website</div><h3 class="portfolio-name">Adeola Creative Studio</h3><p class="portfolio-desc">Elegant personal portfolio for a graphic designer with animated galleries, project case studies, and booking system.</p><div class="portfolio-tags"><span class="portfolio-tag">Portfolio</span><span class="portfolio-tag">Animation</span><span class="portfolio-tag">Branding</span></div></div>
         </article>
         <article class="portfolio-card reveal" data-category="landing" style="transition-delay:0.4s">
-          <div class="portfolio-thumb"><div class="portfolio-thumb-inner pc-green">💰</div><div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div></div>
+          <div class="portfolio-thumb">
+            <div class="portfolio-thumb-inner"><img src="images/proj6.jpg" alt="FinEdge Investment Platform landing page" loading="lazy" /></div>
+            <div class="portfolio-overlay"><div class="portfolio-view-btn"><i class="fas fa-external-link-alt"></i> View Project</div></div>
+          </div>
           <div class="portfolio-info"><div class="portfolio-cat">Landing Page</div><h3 class="portfolio-name">FinEdge Investment Platform</h3><p class="portfolio-desc">Trustworthy financial services landing page with compliance-ready design, testimonials, and lead generation forms.</p><div class="portfolio-tags"><span class="portfolio-tag">Finance</span><span class="portfolio-tag">Lead Gen</span><span class="portfolio-tag">Trust Design</span></div></div>
         </article>
       </div>
@@ -1208,6 +1244,7 @@
     }
 
     mobileClose.addEventListener('click', closeMobileMenu);
+    document.getElementById('mobileCancelBtn').addEventListener('click', closeMobileMenu);
     mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 
     // Close menu on ESC key
