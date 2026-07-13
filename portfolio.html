@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Taiwo Ahmad &mdash; Web Developer &amp; SEO Specialist</title>
+  <meta name="description" content="Explore Taiwo Ahmad's portfolio of premium websites, landing pages, e-commerce stores, and digital solutions crafted for clients across diverse industries in Nigeria and beyond." />
+  <meta name="keywords" content="Taiwo Ahmad portfolio, Nigerian web developer portfolio, website design projects Nigeria, SEO projects, landing page design" />
+  <meta name="author" content="Taiwo Ahmad" />
+  <meta property="og:title" content="Portfolio | Taiwo Ahmad &mdash; Web Developer &amp; SEO Specialist" />
+  <meta property="og:description" content="A curated selection of premium websites and digital solutions crafted for clients across diverse industries." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== FLOATING WHATSAPP ===== -->
+  <a id="float-wa" href="https://wa.me/2349017896194" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="float-wa-tooltip">Chat on WhatsApp &#x1F4AC;</span>
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== DESKTOP NAVBAR ===== -->
+  <header id="navbar" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-dot" aria-hidden="true"></div>
+          Taiwo<span>Ahmad</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="https://wa.me/2349017896194" target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Hire Me</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE BOTTOM NAV ===== -->
+  <nav id="mobile-bottom-nav" aria-label="Mobile navigation">
+    <div class="bottom-nav-inner">
+      <a href="index.html" class="bottom-nav-item" aria-label="Home">
+        <i class="fas fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="about.html" class="bottom-nav-item" aria-label="About">
+        <i class="fas fa-user"></i>
+        <span>About</span>
+      </a>
+      <a href="services.html" class="bottom-nav-item" aria-label="Services">
+        <i class="fas fa-bolt"></i>
+        <span>Services</span>
+      </a>
+      <a href="portfolio.html" class="bottom-nav-item active" aria-label="Work">
+        <i class="fas fa-briefcase"></i>
+        <span>Work</span>
+      </a>
+      <a href="contact.html" class="bottom-nav-item wa-item" aria-label="Contact">
+        <i class="fas fa-paper-plane"></i>
+        <span>Contact</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== PAGE HERO BANNER ===== -->
+    <section class="page-hero" aria-label="Portfolio page hero">
+      <div class="container">
+        <span class="section-label page-hero-label">My Work</span>
+        <h1 class="page-hero-title">Featured <span class="gradient-text">Projects</span></h1>
+        <p class="page-hero-sub">A curated selection of premium websites and digital solutions crafted for clients across diverse industries.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">&rsaquo;</span>
+          <span aria-current="page">Portfolio</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION ===== -->
+    <section id="portfolio" aria-label="Portfolio projects">
+      <div class="container">
+
+        <!-- Filter Buttons -->
+        <div class="portfolio-header reveal">
+          <div class="portfolio-filter" role="group" aria-label="Filter projects by category">
+            <button class="filter-btn active" id="filter-all"       onclick="filterPortfolio('all',       this)" aria-pressed="true">All Projects</button>
+            <button class="filter-btn"        id="filter-business"  onclick="filterPortfolio('business',  this)" aria-pressed="false">Business</button>
+            <button class="filter-btn"        id="filter-landing"   onclick="filterPortfolio('landing',   this)" aria-pressed="false">Landing Pages</button>
+            <button class="filter-btn"        id="filter-ecommerce" onclick="filterPortfolio('ecommerce', this)" aria-pressed="false">E-Commerce</button>
+            <button class="filter-btn"        id="filter-portfolio" onclick="filterPortfolio('portfolio', this)" aria-pressed="false">Portfolio</button>
+          </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="portfolio-grid">
+
+          <!-- Card 1: Laundry Dream Calculator -->
+          <article class="portfolio-card reveal" data-category="landing" style="transition-delay:0s;">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner">
+                <img src="images/proj1.jpg" alt="Laundry Dream Calculator web application" loading="lazy" width="680" height="420" />
+              </div>
+              <div class="portfolio-overlay" aria-hidden="true">
+                <a href="https://laundry-dream-calc.lovable.app" target="_blank" rel="noopener noreferrer" class="portfolio-view-btn" tabindex="-1">
+                  <i class="fas fa-external-link-alt"></i> Live Preview
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <div class="portfolio-cat">Web Application</div>
+              <h2 class="portfolio-name">Laundry Dream Calculator</h2>
+              <p class="portfolio-desc">A smart laundry pricing calculator web app with a clean, modern UI &mdash; helping laundry businesses quickly generate accurate quotes for customers.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Web App</span>
+                <span class="portfolio-tag">Calculator</span>
+                <span class="portfolio-tag">Lovable</span>
+              </div>
+              <div style="margin-top:18px;">
+                <a href="https://laundry-dream-calc.lovable.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="proj1-live">
+                  <i class="fas fa-external-link-alt"></i> Live Preview
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Ahmad Restaurant Portfolio -->
+          <article class="portfolio-card reveal" data-category="portfolio" style="transition-delay:0.08s;">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner">
+                <img src="images/proj2.jpg" alt="Ahmad Restaurant Portfolio website" loading="lazy" width="680" height="420" />
+              </div>
+              <div class="portfolio-overlay" aria-hidden="true">
+                <a href="https://ahmad-resturant-portfolio.lovable.app" target="_blank" rel="noopener noreferrer" class="portfolio-view-btn" tabindex="-1">
+                  <i class="fas fa-external-link-alt"></i> Live Preview
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <div class="portfolio-cat">Restaurant Portfolio</div>
+              <h2 class="portfolio-name">Ahmad Restaurant Portfolio</h2>
+              <p class="portfolio-desc">Elegant restaurant showcase website with a rich menu display, stunning food imagery layout, and a compelling brand identity that drives table reservations.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Restaurant</span>
+                <span class="portfolio-tag">Portfolio</span>
+                <span class="portfolio-tag">Lovable</span>
+              </div>
+              <div style="margin-top:18px;">
+                <a href="https://ahmad-resturant-portfolio.lovable.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="proj2-live">
+                  <i class="fas fa-external-link-alt"></i> Live Preview
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: TaskFlow Todo App -->
+          <article class="portfolio-card reveal" data-category="landing" style="transition-delay:0.16s;">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner">
+                <img src="images/proj3.jpg" alt="TaskFlow Todo productivity application" loading="lazy" width="680" height="420" />
+              </div>
+              <div class="portfolio-overlay" aria-hidden="true">
+                <a href="https://taskflow-todo-taupe.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-view-btn" tabindex="-1">
+                  <i class="fas fa-external-link-alt"></i> Live Preview
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <div class="portfolio-cat">Productivity App</div>
+              <h2 class="portfolio-name">TaskFlow Todo App</h2>
+              <p class="portfolio-desc">A sleek, responsive task management application with smooth animations, priority tagging, and an intuitive UI built for maximum personal productivity.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Todo App</span>
+                <span class="portfolio-tag">React</span>
+                <span class="portfolio-tag">Vercel</span>
+              </div>
+              <div style="margin-top:18px;">
+                <a href="https://taskflow-todo-taupe.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="proj3-live">
+                  <i class="fas fa-external-link-alt"></i> Live Preview
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Nexus Construction Group -->
+          <article class="portfolio-card reveal" data-category="business" style="transition-delay:0.24s;">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner">
+                <img src="images/proj4.jpg" alt="Nexus Construction Group corporate website" loading="lazy" width="680" height="420" />
+              </div>
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-view-btn" style="cursor:default;opacity:0.75;">
+                  <i class="fas fa-lock"></i> Private Project
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <div class="portfolio-cat">Corporate Website</div>
+              <h2 class="portfolio-name">Nexus Construction Group</h2>
+              <p class="portfolio-desc">Premium corporate website for a construction firm with project gallery, team showcase, and enquiry system.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Corporate</span>
+                <span class="portfolio-tag">WordPress</span>
+                <span class="portfolio-tag">SEO</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Adeola Creative Studio -->
+          <article class="portfolio-card reveal" data-category="portfolio" style="transition-delay:0.32s;">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner">
+                <img src="images/proj5.jpg" alt="Adeola Creative Studio portfolio website" loading="lazy" width="680" height="420" />
+              </div>
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-view-btn" style="cursor:default;opacity:0.75;">
+                  <i class="fas fa-lock"></i> Private Project
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <div class="portfolio-cat">Portfolio Website</div>
+              <h2 class="portfolio-name">Adeola Creative Studio</h2>
+              <p class="portfolio-desc">Elegant personal portfolio for a graphic designer with animated galleries, project case studies, and booking system.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Portfolio</span>
+                <span class="portfolio-tag">Animation</span>
+                <span class="portfolio-tag">Branding</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: FinEdge Investment Platform -->
+          <article class="portfolio-card reveal" data-category="landing" style="transition-delay:0.4s;">
+            <div class="portfolio-thumb">
+              <div class="portfolio-thumb-inner">
+                <img src="images/proj6.jpg" alt="FinEdge Investment Platform landing page" loading="lazy" width="680" height="420" />
+              </div>
+              <div class="portfolio-overlay" aria-hidden="true">
+                <div class="portfolio-view-btn" style="cursor:default;opacity:0.75;">
+                  <i class="fas fa-lock"></i> Private Project
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <div class="portfolio-cat">Landing Page</div>
+              <h2 class="portfolio-name">FinEdge Investment Platform</h2>
+              <p class="portfolio-desc">Trustworthy financial services landing page with compliance-ready design, testimonials, and lead generation forms.</p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Finance</span>
+                <span class="portfolio-tag">Lead Gen</span>
+                <span class="portfolio-tag">Trust Design</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /portfolio-grid -->
+
+        <!-- See More Projects CTA -->
+        <div style="text-align:center;margin-top:56px;" class="reveal">
+          <p style="color:var(--white-60);font-size:0.95rem;margin-bottom:24px;">Like what you see? Let&rsquo;s build something incredible together.</p>
+          <a
+            href="https://wa.me/2349017896194?text=Hi%20Taiwo%2C%20I%20just%20viewed%20your%20portfolio%20and%20I%27d%20love%20to%20discuss%20a%20project"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp"
+            id="see-more-projects"
+          >
+            <i class="fab fa-whatsapp"></i> See More Projects on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /#portfolio -->
+
+    <!-- ===== BOTTOM CTA SECTION ===== -->
+    <section style="background:var(--deep-charcoal);padding:80px 0;" aria-label="Call to action">
+      <div class="container">
+        <div style="text-align:center;" class="reveal">
+          <span class="section-label">Have a Project in Mind?</span>
+          <h2 class="section-title">Let&rsquo;s Turn Your Idea Into <span class="gradient-text">Reality</span></h2>
+          <p class="section-subtitle" style="margin:0 auto 40px;">
+            From stunning websites to powerful SEO strategies &mdash; I&rsquo;m ready to help your business stand out online and attract real customers.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+            <a
+              href="https://wa.me/2349017896194?text=Hi%20Taiwo%2C%20I%27d%20like%20to%20get%20a%20free%20quote%20for%20my%20project"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-whatsapp"
+              id="cta-whatsapp-quote"
+            >
+              <i class="fab fa-whatsapp"></i> Get a Free Quote
+            </a>
+            <a href="contact.html" class="btn btn-outline" id="cta-contact-me">
+              <i class="fas fa-paper-plane"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><div class="nav-logo-dot" aria-hidden="true"></div>Taiwo<span>Ahmad</span></a>
+          <p class="footer-desc">Nigeria&rsquo;s trusted freelance web developer, SEO optimizer, and digital growth specialist. Helping businesses across Africa and beyond build powerful online presences that convert.</p>
+          <div class="footer-socials">
+            <a href="https://x.com/DevDynamo_TY" target="_blank" rel="noopener" class="social-btn tw" aria-label="X Twitter @DevDynamo_TY"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/2349017896194" target="_blank" rel="noopener" class="social-btn wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="services.html">Website Design</a></li>
+            <li><a href="services.html">Landing Pages</a></li>
+            <li><a href="services.html">SEO Optimization</a></li>
+            <li><a href="services.html">Google Business</a></li>
+            <li><a href="services.html">E-Commerce Setup</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <ul class="footer-links" style="gap:16px;">
+            <li><i class="fab fa-whatsapp" style="color:#25d366;width:16px;" aria-hidden="true"></i><a href="https://wa.me/2349017896194" target="_blank" rel="noopener">+234 901 789 6194</a></li>
+            <li><i class="fas fa-envelope" style="color:#8b5cf6;width:16px;" aria-hidden="true"></i><a href="mailto:ahmadabdwaheed864@gmail.com">Email Me</a></li>
+            <li><i class="fas fa-map-marker-alt" style="color:#ef4444;width:16px;" aria-hidden="true"></i><span style="color:var(--white-60);">Nigeria (Worldwide)</span></li>
+          </ul>
+          <div style="margin-top:24px;">
+            <a href="https://wa.me/2349017896194?text=Hi%20Taiwo%2C%20I%27d%20like%20to%20hire%20you" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Hire Me Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; <span id="year"></span> <span>Taiwo Ahmad</span>. All Rights Reserved. Crafted with &hearts; in Nigeria.</div>
+        <div class="footer-legal">
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
