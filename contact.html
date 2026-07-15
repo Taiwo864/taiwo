@@ -281,61 +281,62 @@
         </div>
 
         <div class="reveal-right">
-          <div class="glass-card contact-form" style="padding:0;overflow:hidden;position:relative;">
-            <!-- ProForms Embed Header -->
-            <div style="padding:28px 32px 0;display:flex;align-items:center;gap:12px;">
-              <div style="width:40px;height:40px;border-radius:10px;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">📬</div>
-              <div>
-                <div class="contact-form-title" style="margin-bottom:2px;">Send Me a Message</div>
-                <div style="font-size:0.78rem;color:var(--white-60);">Powered by ProForms · I'll reply within 1 hour</div>
+          <div class="glass-card contact-form">
+            <div class="contact-form-title">📬 Send Me a Message</div>
+
+            <form
+              id="contactForm"
+              action="https://app.proforms.top/f/pr79de86a7"
+              method="POST"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Name</label>
+                  <input type="text" id="contact-name" name="name" placeholder="John Doe" required />
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" name="email" placeholder="john@example.com" required />
+                </div>
               </div>
-            </div>
+              <div class="form-group">
+                <label for="contact-phone">Phone / WhatsApp (optional)</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="+234 900 000 0000" />
+              </div>
+              <div class="form-group">
+                <label for="contact-service">Service Needed</label>
+                <select id="contact-service" name="service">
+                  <option value="">— Select a service —</option>
+                  <option value="Website Design">Website Design</option>
+                  <option value="Landing Page">Landing Page</option>
+                  <option value="SEO Optimization">SEO Optimization</option>
+                  <option value="Google Business Profile">Google Business Profile</option>
+                  <option value="E-Commerce Store">E-Commerce Store</option>
+                  <option value="Speed Optimization">Speed Optimization</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-budget">Your Budget</label>
+                <select id="contact-budget" name="budget">
+                  <option value="">— Select budget range —</option>
+                  <option value="Under $100">Under $100</option>
+                  <option value="$100 - $500">$100 – $500</option>
+                  <option value="$500 - $1000">$500 – $1,000</option>
+                  <option value="Above $1000">Above $1,000</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="message" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit" id="submitBtn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </form>
 
-            <!-- Loading Indicator -->
-            <div id="formLoader" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:32px;color:var(--white-60);font-size:0.9rem;">
-              <i class="fas fa-spinner fa-spin" style="color:var(--purple-light);font-size:1.2rem;"></i>
-              Loading form...
-            </div>
-
-            <!-- ProForms iFrame -->
-            <iframe
-              id="proformsFrame"
-              src="https://app.proforms.top/f/pr79de86a7"
-              title="Contact Form — Taiwo Ahmad"
-              frameborder="0"
-              scrolling="no"
-              allowtransparency="true"
-              style="width:100%;min-height:520px;border:none;display:none;background:transparent;"
-              onload="
-                this.style.display='block';
-                document.getElementById('formLoader').style.display='none';
-              "
-            ></iframe>
-
-            <!-- Fallback direct link -->
-            <div style="text-align:center;padding:16px 32px 24px;border-top:1px solid var(--card-border);margin-top:0;">
-              <p style="font-size:0.78rem;color:var(--white-60);margin-bottom:10px;">
-                Form not loading? 
-                <a href="https://app.proforms.top/f/pr79de86a7" target="_blank" rel="noopener" style="color:var(--purple-light);text-decoration:none;font-weight:600;">Open it directly ↗</a>
-              </p>
-              <a href="https://wa.me/2349017896194?text=Hi%20Taiwo%2C%20I'd%20like%20to%20work%20with%20you!" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="font-size:0.8rem;">
-                <i class="fab fa-whatsapp"></i> Or Chat on WhatsApp Instead
-              </a>
-            </div>
           </div>
         </div>
-
-        <script>
-          // Auto-resize iframe to match ProForms content height
-          window.addEventListener('message', function(e) {
-            if (e.origin.includes('proforms.top')) {
-              var frame = document.getElementById('proformsFrame');
-              if (frame && e.data && e.data.height) {
-                frame.style.minHeight = (e.data.height + 40) + 'px';
-              }
-            }
-          });
-        </script>
       </div>
     </div>
   </section>
